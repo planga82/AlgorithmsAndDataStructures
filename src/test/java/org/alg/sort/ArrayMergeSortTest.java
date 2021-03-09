@@ -1,4 +1,4 @@
-package alg.sort;
+package org.alg.sort;
 
 import org.alg.sort.ArrayMergeSort;
 import org.junit.Test;
@@ -6,9 +6,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
 
-/**
- * Unit test for simple App.
- */
 public class ArrayMergeSortTest
 {
     @Test

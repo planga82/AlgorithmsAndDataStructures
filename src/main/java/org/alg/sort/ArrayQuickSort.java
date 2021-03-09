@@ -1,5 +1,7 @@
 package org.alg.sort;
 
+import org.utils.ArrayUtils;
+
 public class ArrayQuickSort {
 
     /**
@@ -28,17 +30,13 @@ public class ArrayQuickSort {
         for(int i = low; i < high; i++){
             if(arr[i] < pivot){
                 min++;
-                swap(arr, i, min);
+                ArrayUtils.swap(arr, i, min);
             }
         }
         min++;
-        swap(arr, min, high);
+        ArrayUtils.swap(arr, min, high);
         return min;
     }
 
-    private static void swap(int[] arr, int elem1, int elem2){
-        int tmp = arr[elem1];
-        arr[elem1] = arr[elem2];
-        arr[elem2] = tmp;
-    }
+
 }
