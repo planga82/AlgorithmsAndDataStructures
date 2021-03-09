@@ -4,6 +4,8 @@ public class ArrayMergeSort {
 
     /**
      * Quicksort method to order an array
+     * All cases O(nlogn)
+     * Extra space O(n)
      * @param arr
      * @param low
      * @param high

@@ -4,6 +4,11 @@ public class ArrayQuickSort {
 
     /**
      * Quicksort method to order an array
+     * Worst case O(n²)
+     * Best case O(nlogn)
+     * Avg case O(nlogn)
+     * No extra space
+     *
      * @param arr
      * @param low
      * @param high
