@@ -2,12 +2,12 @@ package org.structures.heaps;
 
 import org.utils.ArrayUtils;
 
-public class ArrayMinBinaryHeap {
+public class ArrayMaxBinaryHeap {
     int capacity;
     int arr[];
     int size = 0;
 
-    public ArrayMinBinaryHeap(int capacity){
+    public ArrayMaxBinaryHeap(int capacity){
         this.capacity = capacity;
         arr = new int[capacity];
     }
@@ -29,7 +29,7 @@ public class ArrayMinBinaryHeap {
      * O(1)
      * @return the min element
      */
-    public int getMini(){
+    public int getMaxi(){
         return arr[0];
     }
 
@@ -45,13 +45,18 @@ public class ArrayMinBinaryHeap {
         reorderUp(pos);
     }
 
+    public void replaceRoot(int k){
+        arr[0] = k;
+        reorderDown(0);
+    }
+
     /**
      * O(log n)
      * Extract the min element
      * @return
      */
-    public int extractMin(){
-        int r = getMini();
+    public int extractMax(){
+        int r = getMaxi();
         delete(0);
         return r;
     }
@@ -83,10 +88,10 @@ public class ArrayMinBinaryHeap {
         int w;
         if(l > size-1) w = r;
         else if(r > size-1) w = l;
-        else if(arr[l] < arr[r]) w = l;
+        else if(arr[l] > arr[r]) w = l;
         else w = r;
 
-        if(arr[k] > arr[w]){
+        if(arr[k] < arr[w]){
             ArrayUtils.swap(arr,k,w);
             reorderDown(w);
         }
@@ -95,7 +100,7 @@ public class ArrayMinBinaryHeap {
     private void reorderUp(int k){
         if(k == 0) return;
         int parent = getParent(k);
-        if(arr[parent] > arr[k]){
+        if(arr[parent] < arr[k]){
             ArrayUtils.swap(arr,parent, k);
             reorderUp(parent);
         }
