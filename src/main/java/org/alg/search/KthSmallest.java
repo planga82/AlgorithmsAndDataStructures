@@ -17,7 +17,7 @@ public class KthSmallest {
      * @return
      */
     public static int simple(int[] arr, int k){
-        ArrayMergeSort.order(arr,0, arr.length -1);
+        ArrayMergeSort.order(arr);
         return arr[k-1];
     }
 

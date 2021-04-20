@@ -1,16 +1,24 @@
 package org.alg.sort;
 
+import java.util.HashMap;
+
 public class CountingSort {
 
 
-    public static int[] order(int[] arr, int rangeElemnts){
-        int[] counts = new int[rangeElemnts];
+    /**
+     * Worst case O(n + k)
+     * Space O(n + K)
+     * @param arr
+     * @param rangeElements
+     * @return
+     */
+    public int[] order(int[] arr, int rangeElements){
+        int[] counts = new int[rangeElements];
         //Count elements
         for (int i = 0; i < arr.length; i++) {
             counts[arr[i]]++;
         }
-        //Swift  count[0] = 0  count[i]=count[i-1] **Starting indexes**
-        //Construct output
+
         int[] out = new int[arr.length];
         int index =0;
         for (int i = 0; i < counts.length; i++) {
@@ -21,7 +29,6 @@ public class CountingSort {
         }
         return out;
     }
-
 
 
 }

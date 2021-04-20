@@ -2,16 +2,19 @@ package org.alg.sort;
 
 public class ArrayMergeSort {
 
+
     /**
      * Quicksort method to order an array
      * All cases O(nlogn)
      * Extra space O(n)
      * @param arr
-     * @param low
-     * @param high
      * @return
      */
-    public static void order(int[] arr, int low, int high){
+    public static void order(int[] arr){
+        order(arr,0, arr.length -1);
+    }
+
+    private static void order(int[] arr, int low, int high){
         if(low >= high){
             return;
         }
